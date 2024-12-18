@@ -28,7 +28,7 @@ class CustomStoryAvatar extends StatelessWidget {
                   decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       gradient: LinearGradient(colors: [
-                        Colors.red,
+                        Colors.pink,
                         Colors.blue,
                         Colors.yellow,
                       ])),
