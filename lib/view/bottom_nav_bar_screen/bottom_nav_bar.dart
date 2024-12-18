@@ -1,3 +1,4 @@
+import 'package:events/core/constants/color_constant.dart';
 import 'package:events/view/home_screen/home_screen.dart';
 import 'package:events/view/select_account_screen/select_account_screen.dart';
 import 'package:flutter/material.dart';
@@ -53,9 +54,10 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
 
             const BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.home,
-                  size: 30,
-                  color: Colors.black,
+                  Icons.home_outlined,
+                  size: 35,
+                  weight: 20,
+                  color: ColorConstants.primaryBlack,
                 ),
                 label: ""),
 
@@ -65,7 +67,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                 icon: Icon(
                   Icons.search,
                   size: 30,
-                  color: Colors.black,
+                  color: ColorConstants.primaryBlack,
                 ),
                 label: ""),
 
@@ -75,7 +77,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                 icon: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Colors.black)),
+                        border: Border.all(color: ColorConstants.primaryBlack)),
                     child: const Icon(
                       Icons.add,
                       size: 30,
@@ -86,22 +88,20 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
             // #4 Likes
 
             const BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.favorite,
-                  size: 30,
-                  color: Colors.black,
+                icon: Image(
+                  image: AssetImage("asstes/Icons/reel.png"),
+                  height: 35,
+                  color: ColorConstants.primaryBlack,
+                  width: 35,
                 ),
                 label: ""),
 
             // #5 Profile
 
-            const BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: CircleAvatar(
-                // child: Image(
-                //   image: AssetImage(
-                //     "asstes/images/Profile 01.jpg",
-                //   ),
-                // ),
+                backgroundColor: ColorConstants.primaryBlack,
+                child: Image.asset("asstes/images/Profile 01.jpg"),
                 radius: 20,
               ),
               label: "",
