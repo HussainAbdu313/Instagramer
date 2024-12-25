@@ -1,16 +1,23 @@
 import 'package:events/core/constants/color_constant.dart';
 import 'package:flutter/material.dart';
 
-class CustomPostsContainer extends StatelessWidget {
+class CustomPostsContainer extends StatefulWidget {
   const CustomPostsContainer({super.key});
 
   @override
+  State<CustomPostsContainer> createState() => _CustomPostsContainerState();
+}
+
+class _CustomPostsContainerState extends State<CustomPostsContainer> {
+  List<String> postImagesList = [
+    "https://images.pexels.com/photos/1666021/pexels-photo-1666021.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/1658967/pexels-photo-1658967.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/2526431/pexels-photo-2526431.jpeg?auto=compress&cs=tinysrgb&w=600",
+  ];
+
+  int currentPage = 1;
+  @override
   Widget build(BuildContext context) {
-    List<String> postImagesList = [
-      "https://images.pexels.com/photos/1666021/pexels-photo-1666021.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/1658967/pexels-photo-1658967.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/2526431/pexels-photo-2526431.jpeg?auto=compress&cs=tinysrgb&w=600",
-    ];
     return SingleChildScrollView(
       child: Container(
         color: ColorConstants.primaryWhite,
@@ -49,38 +56,43 @@ class CustomPostsContainer extends StatelessWidget {
             ),
 
             // #2 Pic Posts
-            SizedBox(
-              height: 375,
-              child: PageView.builder(
-                itemCount: postImagesList.length,
-                itemBuilder: (context, index) => Stack(
-                  children: [
-                    Container(
+
+            Stack(
+              children: [
+                SizedBox(
+                  height: 375,
+                  child: PageView.builder(
+                    onPageChanged: (value) {
+                      currentPage = value + 1;
+                      setState(() {});
+                    },
+                    itemCount: postImagesList.length,
+                    itemBuilder: (context, index) => Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(postImagesList[index]))),
                     ),
-                    Positioned(
-                      right: 0,
-                      top: 0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: ColorConstants.primaryBlack),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 5),
-                        child: const Text(
-                          "1/3",
-                          style: TextStyle(
-                            color: ColorConstants.primaryWhite,
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
+                  ),
                 ),
-              ),
+                Positioned(
+                  right: 10,
+                  top: 10,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: ColorConstants.primaryBlack.withOpacity(.8)),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    child: Text(
+                      "$currentPage/${postImagesList.length}",
+                      style: const TextStyle(
+                        color: ColorConstants.primaryWhite,
+                      ),
+                    ),
+                  ),
+                )
+              ],
             ),
             const SizedBox(
               height: 8,
