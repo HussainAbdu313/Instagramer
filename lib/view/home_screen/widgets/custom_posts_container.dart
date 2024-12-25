@@ -38,7 +38,7 @@ class _CustomPostsContainerState extends State<CustomPostsContainer> {
                     "_hus__ain_",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                      fontSize: 18,
                     ),
                   ),
                 ],
@@ -47,7 +47,7 @@ class _CustomPostsContainerState extends State<CustomPostsContainer> {
                 "Kannur, Kerala",
                 style: TextStyle(
                   color: Colors.black87,
-                  fontSize: 11,
+                  fontSize: 13,
                   fontWeight: FontWeight.normal,
                 ),
               ),
@@ -139,7 +139,7 @@ class _CustomPostsContainerState extends State<CustomPostsContainer> {
                     "https://cdn-icons-png.flaticon.com/128/9511/9511721.png",
                     scale: 4.3,
                   ),
-                  color: ColorConstants.primaryBlack,
+                  color: Color.fromARGB(255, 250, 148, 148),
                 ),
               ],
             )

@@ -83,9 +83,9 @@ class CustomStoryAvatar extends StatelessWidget {
                 )
               ],
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            // const SizedBox(
+            //   height: 03,
+            // ),
 
             // #2 Story users name
 

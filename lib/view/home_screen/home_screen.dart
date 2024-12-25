@@ -58,6 +58,7 @@ class HomeScreen extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
+              mainAxisSize: MainAxisSize.min,
               children: List.generate(
                   DummyDb.storyList.length,
                   (index) => CustomStoryAvatar(
