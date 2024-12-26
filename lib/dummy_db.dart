@@ -61,4 +61,47 @@ class DummyDb {
       "isLive": false,
     },
   ];
+
+  static const List<Map<String, dynamic>> homePostsList = [
+    {
+      "userName": "Hussain",
+      "proPic":
+          "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "location": "Kannur, Kerala",
+      "posts": [
+        "https://images.pexels.com/photos/1666021/pexels-photo-1666021.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/1658967/pexels-photo-1658967.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/2526431/pexels-photo-2526431.jpeg?auto=compress&cs=tinysrgb&w=600",
+      ],
+      "liked": true,
+      "caption":
+          "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    },
+    {
+      "userName": "Vyshnav",
+      "proPic":
+          "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "location": "Kannur, Kerala",
+      "posts": [
+        "https://images.pexels.com/photos/1666021/pexels-photo-1666021.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/1658967/pexels-photo-1658967.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/2526431/pexels-photo-2526431.jpeg?auto=compress&cs=tinysrgb&w=600",
+      ],
+      "liked": false,
+      "caption":
+          " is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    },
+    {
+      "userName": "Haidhal",
+      "proPic":
+          "https://images.pexels.com/photos/2647097/pexels-photo-2647097.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "location": "Kannur, Kerala",
+      "posts": [
+        "https://images.pexels.com/photos/2647097/pexels-photo-2647097.jpeg?auto=compress&cs=tinysrgb&w=600",
+      ],
+      "liked": true,
+      "caption":
+          " is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    },
+  ];
 }

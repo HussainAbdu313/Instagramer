@@ -72,17 +72,12 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                 label: ""),
 
             // #3 add post
-
-            BottomNavigationBarItem(
-                icon: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: ColorConstants.primaryBlack)),
-                    child: const Icon(
-                      Icons.add,
-                      size: 30,
-                      color: Colors.black,
-                    )),
+            const BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.add_box_outlined,
+                  size: 30,
+                  color: ColorConstants.primaryBlack,
+                ),
                 label: ""),
 
             // #4 Likes

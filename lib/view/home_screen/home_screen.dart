@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 10,
+            width: 15,
           ),
           Image(
             image: AssetImage("asstes/Icons/chat.png"),
@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
             color: ColorConstants.primaryBlack,
           ),
           SizedBox(
-            width: 10,
+            width: 13,
           ),
         ],
         backgroundColor: ColorConstants.primaryWhite,
@@ -53,23 +53,40 @@ class HomeScreen extends StatelessWidget {
 
       // #1 custom story section
 
-      body: Column(
-        children: [
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: List.generate(
-                  DummyDb.storyList.length,
-                  (index) => CustomStoryAvatar(
-                        proPic: DummyDb.storyList[index]["proPic"],
-                        userName: DummyDb.storyList[index]["userName"],
-                        isLive: DummyDb.storyList[index]["isLive"],
-                      )),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: List.generate(
+                    DummyDb.storyList.length,
+                    (index) => CustomStoryAvatar(
+                          proPic: DummyDb.storyList[index]["proPic"],
+                          userName: DummyDb.storyList[index]["userName"],
+                          isLive: DummyDb.storyList[index]["isLive"],
+                        )),
+              ),
             ),
-          ),
-          const CustomPostsContainer(),
-        ],
+
+            // #2 custom posts
+
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: DummyDb.homePostsList.length,
+              itemBuilder: (context, index) => CustomPostsContainer(
+                userName: DummyDb.homePostsList[index]["userName"].toString(),
+                proPic: DummyDb.homePostsList[index]["proPic"].toString(),
+                location: DummyDb.homePostsList[index]["location"].toString(),
+                postImagesList: DummyDb.homePostsList[index]["posts"],
+                isLike: DummyDb.homePostsList[index]["liked"],
+                caption: DummyDb.homePostsList[index]["caption"].toString(),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
