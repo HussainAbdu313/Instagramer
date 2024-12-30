@@ -1,4 +1,5 @@
 import 'package:events/core/constants/color_constant.dart';
+import 'package:events/view/Search_screen/search_screen.dart';
 import 'package:events/view/home_screen/home_screen.dart';
 import 'package:events/view/select_account_screen/select_account_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +14,7 @@ class BottomNavBarScreen extends StatefulWidget {
 class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   List<Widget> screenList = [
     const HomeScreen(),
-    Container(
-      color: Colors.yellow,
-    ),
+    const SearchScreen(),
     Container(
       color: Colors.white,
     ),
@@ -53,30 +52,41 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
             // #1 Home
 
             const BottomNavigationBarItem(
+                activeIcon: Icon(
+                  Icons.home,
+                  size: 30,
+                  color: ColorConstants.primaryBlack,
+                ),
                 icon: Icon(
                   Icons.home_outlined,
-                  size: 35,
-                  weight: 20,
-                  color: ColorConstants.primaryBlack,
+                  size: 30,
                 ),
                 label: ""),
 
             // #2 Search
 
             const BottomNavigationBarItem(
+                activeIcon: Icon(
+                  Icons.search_rounded,
+                  size: 30,
+                  color: ColorConstants.primaryBlack,
+                ),
                 icon: Icon(
                   Icons.search,
                   size: 30,
-                  color: ColorConstants.primaryBlack,
                 ),
                 label: ""),
 
             // #3 add post
-            const BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.add_box_outlined,
-                  size: 30,
-                  color: ColorConstants.primaryBlack,
+
+            BottomNavigationBarItem(
+                icon: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all()),
+                  child: const Icon(
+                    Icons.add_box_outlined,
+                  ),
                 ),
                 label: ""),
 
@@ -93,11 +103,24 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
 
             // #5 Profile
 
-            BottomNavigationBarItem(
-              icon: CircleAvatar(
+            const BottomNavigationBarItem(
+              activeIcon: CircleAvatar(
                 backgroundColor: ColorConstants.primaryBlack,
-                child: Image.asset("asstes/images/Profile 01.jpg"),
-                radius: 20,
+                radius: 15,
+                child: Center(
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                      "https://images.pexels.com/photos/17896705/pexels-photo-17896705/free-photo-of-person-in-latex-suit-with-black-horns.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    ),
+                    radius: 16,
+                  ),
+                ),
+              ),
+              icon: CircleAvatar(
+                radius: 15,
+                backgroundImage: NetworkImage(
+                  "https://images.pexels.com/photos/17896705/pexels-photo-17896705/free-photo-of-person-in-latex-suit-with-black-horns.jpeg?auto=compress&cs=tinysrgb&w=600",
+                ),
               ),
               label: "",
             )

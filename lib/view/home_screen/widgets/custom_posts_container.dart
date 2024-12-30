@@ -206,7 +206,7 @@ class _CustomPostsContainerState extends State<CustomPostsContainer> {
                               fontWeight: FontWeight.bold),
                           children: [
                             TextSpan(
-                              text: "${widget.caption}" ?? " ",
+                              text: "${widget.caption}" ?? "",
                               style: const TextStyle(
                                   color: ColorConstants.primaryBlack,
                                   fontWeight: FontWeight.normal),

@@ -20,7 +20,7 @@ class SelectAccountScreen extends StatelessWidget {
               alignment: Alignment.center,
             ),
             const SizedBox(
-              height: 15,
+              height: 30,
             ),
 
             // #2 Profile

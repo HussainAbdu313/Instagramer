@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           const SizedBox(
-            height: 15,
+            height: 50,
           ),
           const Image(
             image: AssetImage("asstes/images/Instagram Logo.png"),
