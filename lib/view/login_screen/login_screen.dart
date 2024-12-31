@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 Image.asset('asstes/images/Instagram Logo.png'),
                 const SizedBox(
-                  height: 50,
+                  height: 60,
                 ),
 
                 // #2 user name text field

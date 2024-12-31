@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Center(
             child: SizedBox(
               child: Image.asset(
-                "asstes/images/Icon.png",
+                "asstes/Icons/Icon.png",
                 scale: 1.5,
               ),
             ),

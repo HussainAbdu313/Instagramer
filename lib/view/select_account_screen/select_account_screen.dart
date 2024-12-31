@@ -20,7 +20,7 @@ class SelectAccountScreen extends StatelessWidget {
               alignment: Alignment.center,
             ),
             const SizedBox(
-              height: 30,
+              height: 40,
             ),
 
             // #2 Profile
@@ -30,7 +30,7 @@ class SelectAccountScreen extends StatelessWidget {
               radius: 50,
             ),
             const SizedBox(
-              height: 10,
+              height: 25,
             ),
 
             // #3 Name
@@ -43,7 +43,7 @@ class SelectAccountScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 25,
             ),
 
             // #4 Login Button
